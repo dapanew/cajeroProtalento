@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automatico</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script defer src="./js/index.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <!---->
+</head>
+<body>
+<header>
+</header>
+<main>
+    <div id="root">
+    
+
+          <h1 id="saludo"></h1>
+          <div id="saldo-Actual"></div>
+   <br>
+      <div id="operaciones">
+        <img src="assets/img/consulta-saldo.gif" alt="Consulta Saldo" onclick="mostrarSaldoPantalla()" id="consulta-saldo"/>
+        <img src="assets/img/ingresar-saldo.png" alt="Ingresar Saldo" onclick="ingesarSaldo()" id="ingresar-saldo"/>
+        <img src="assets/img/retirar-saldo.gif" alt="Retirar Saldo" onclick="retirarSaldo()" id="retirar-saldo"/>
+       
+      </div>
+      <div id="consulta" style="display: none;">
+        <span id="mensajeResta"></span>
+        <div id="movimientos"></div>
+        <div class="contenBoton">
+          <button onclick="salir()" id="cancelar">SALIR</button>
+      </div>
+    </div>
+<div id="resta" style="display: none">
+  <span id="mensajeResta">Por favor digita el monto a <strong id="str2">RETIRAR</strong></span>
+  <input
+    type="number"
+    id="mont-Ret-Input"
+    placeholder="Ingresa el monto"
+    style="text-decoration: none"
+    required
+  />
+  <div class="contenBoton">
+    <button onclick="debitarSaldo()" id="accion2" >RETIRAR</button>
+    <button onclick="salir()" id="cancelar">CANCELAR</button>
+  </div>
+</div>
+<div id="suma" style="display: none">
+  <span id="mensajeSuma">Por favor digita el monto a <strong id="str1">DEPOSITAR</strong></span>
+  <input
+    type="number"
+    id="mont-Ingre-Input"
+    placeholder="Ingresa el monto"
+    style="text-decoration: none"
+    required
+  />
+  <div class="contenBoton">
+    <button onclick="sumarValorIngresado()" id="accion1">DEPOSITAR</button>
+    <button onclick="salir()" id="cancelar">CANCELAR</button>
+
+  </div>
+  
+</div>
+<p id="resultado" style="display: none;"></p>
+  </main>
+  <br><br>
+ 
+    <footer>David Panesso Sanchez</footer>
+</body>
+</html>
